@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Blog</title>
+    <link rel="stylesheet" href="./../public/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <%- include('nav', { active: 'index' }) %>
+    <div class="header">
+        <h1 class="blog-title display-5">Entries</h1>
+    </div>
+      <div class="row">
+        <div class="leftcolumn">
+            <div class="card">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th width=30 scope="col">Username</th>
+                            <th scope="col">Entry</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% EntryData.forEach(entry =>{ %>
+                            <tr>
+                                <td><%= entry.username %></td>
+                                <td><b><%= entry.title %></b><br><%= entry.date %><br><%= entry.entry %></td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        </div> 
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>About Us</h2>
+                    <img class="img" style="height:100px; width:100px;" src="public/smiley.png">
+                    <p>This is some text about us...</p>
+            </div>
+            <div class="card">
+                <h3>Important Entries</h3>
+                <div>May 25 2020</div>
+            </div>
+            <div class="card">
+                <h3>Follow Us</h3>
+                <p>On... </p>
+            </div>
+        </div>
+    </div>
+    
+  </body>
+</html>

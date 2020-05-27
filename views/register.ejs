@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<%- include ('head.ejs') %>
+	</head>
+	<body>
+		<%- include('nav', { active: 'index' }) %>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-xs-12 col-sm-8">
+					<h1 class="blog-title display-5">Register</h1>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class="col-xs-12 col-sm-8">
+					<form action="/register" method="POST">
+					<div class="form-group">
+						<label for="name">Name</label>
+						<input type="text" id="name" name="name" required>
+					</div>
+					<div class="form-group">
+						<label for="email">Email</label>
+						<input type="email" id="email" name="email" required>
+					</div>
+					<div class="form-group">
+						<label for="password">Password</label>
+						<input type="password" id="password" name="password" required>
+					</div>
+					<div class="form-group">
+						<label for="authentication">Authentication Code</label>
+						<input type="password" id="authentication" name="authentication" required>
+					</div>
+						<button type="submit" class="btn btn-secondary">Register</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<footer id="fussbereich">
+			<%- include('footer') %>
+		</footer>
+	</body>
+</html>
